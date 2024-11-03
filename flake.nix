@@ -53,6 +53,7 @@
               withHoogle = true;
               buildInputs =
                 (with pkgs; [
+                  zlib
                 ]) ++
                 (with haskellPackages; [
                   haskell-language-server
