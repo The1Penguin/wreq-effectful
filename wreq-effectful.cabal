@@ -26,7 +26,8 @@ version:            0.1.0.1
 synopsis:           Adaptation of the wreq library for the effectful ecosystem.
 
 -- A longer description of the package.
--- description:
+description:        Adaptation of the @<https://hackage.haskell.org/package/wreq wreq>@ library for the @<https://hackage.haskell.org/package/effectful effectful>@ ecosystem.
+
 
 -- The license under which the package is released.
 license:            MIT
