@@ -1,6 +1,4 @@
 # wreq-effectful
-Adaptation of the wreq library for the effectful ecosystem.
-
 
 Adaptation of the [wreq](https://hackage.haskell.org/package/wreq)
 library for the effectful ecosystem.
