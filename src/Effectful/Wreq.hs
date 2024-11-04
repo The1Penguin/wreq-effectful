@@ -238,4 +238,3 @@ customHistoriedPayloadMethod method url = unsafeEff_ . W.customHistoriedPayloadM
 customHistoriedPayloadMethodWith :: Wreq :> es => WT.Postable a => String -> W.Options -> String -> a -> Eff es (W.HistoriedResponse L.ByteString)
 customHistoriedPayloadMethodWith method opts url = unsafeEff_ . W.customHistoriedPayloadMethodWith method opts url
 
--- TODO: FoldGet and FoldGetWith
