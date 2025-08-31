@@ -134,7 +134,6 @@ module Effectful.Wreq (
 
 import Effectful
 import Effectful.Dispatch.Static
-import Data.ByteString      qualified as S
 import Data.ByteString.Lazy qualified as L
 import Network.HTTP.Client.MultipartFormData qualified as HF
 import Network.Wreq         qualified as W
