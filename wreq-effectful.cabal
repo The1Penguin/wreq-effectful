@@ -1,4 +1,5 @@
 cabal-version:      3.4
+
 -- The cabal-version field refers to the version of the .cabal specification,
 -- and can be different from the cabal-install (the tool) version and the
 -- Cabal (the library) version you are using. As such, the Cabal (the library)
@@ -26,8 +27,8 @@ version:            0.1.0.1
 synopsis:           Adaptation of the wreq library for the effectful ecosystem.
 
 -- A longer description of the package.
-description:        Adaptation of the @<https://hackage.haskell.org/package/wreq wreq>@ library for the @<https://hackage.haskell.org/package/effectful effectful>@ ecosystem.
-
+description:
+  Adaptation of the @<https://hackage.haskell.org/package/wreq wreq>@ library for the @<https://hackage.haskell.org/package/effectful effectful>@ ecosystem.
 
 -- The license under which the package is released.
 license:            MIT
@@ -42,7 +43,7 @@ author:             Nor Führ
 maintainer:         nor@acorneroftheweb.com
 
 -- Category of the project
-category:            Web
+category:           Web
 
 -- A copyright notice.
 -- copyright:
@@ -53,93 +54,96 @@ extra-doc-files:    CHANGELOG.md
 
 -- Extra source files to be distributed with the package, such as examples, or a tutorial module.
 extra-source-files:
-    CHANGELOG.md
-    README.md
+  CHANGELOG.md
+  README.md
 
-bug-reports: https://github.com/The1Penguin/wreq-effectful/issues
+bug-reports:        https://github.com/The1Penguin/wreq-effectful/issues
+
 source-repository head
-    type:     git
-    location: https://github.com/The1Penguin/wreq-effectful
+  type:     git
+  location: https://github.com/The1Penguin/wreq-effectful
 
 common main
-    ghc-options:        -Wall
-                        -Wcompat
-                        -Wno-unticked-promoted-constructors
-                        -Wmissing-deriving-strategies
-                        -Werror=prepositive-qualified-module
+  ghc-options:
+    -Wall -Wcompat -Wno-unticked-promoted-constructors
+    -Wmissing-deriving-strategies -Werror=prepositive-qualified-module
 
-    default-extensions: BangPatterns
-                        ConstraintKinds
-                        DataKinds
-                        DeriveFunctor
-                        DeriveGeneric
-                        DerivingStrategies
-                        FlexibleContexts
-                        FlexibleInstances
-                        GADTs
-                        GeneralizedNewtypeDeriving
-                        ImportQualifiedPost
-                        LambdaCase
-                        MultiParamTypeClasses
-                        NoStarIsType
-                        PolyKinds
-                        RankNTypes
-                        RecordWildCards
-                        RoleAnnotations
-                        ScopedTypeVariables
-                        StandaloneDeriving
-                        TupleSections
-                        TypeApplications
-                        TypeFamilies
-                        TypeOperators
+  default-extensions:
+    BangPatterns
+    ConstraintKinds
+    DataKinds
+    DeriveFunctor
+    DeriveGeneric
+    DerivingStrategies
+    FlexibleContexts
+    FlexibleInstances
+    GADTs
+    GeneralizedNewtypeDeriving
+    ImportQualifiedPost
+    LambdaCase
+    MultiParamTypeClasses
+    NoStarIsType
+    PolyKinds
+    RankNTypes
+    RecordWildCards
+    RoleAnnotations
+    ScopedTypeVariables
+    StandaloneDeriving
+    TupleSections
+    TypeApplications
+    TypeFamilies
+    TypeOperators
 
 library
-    import:           main
+  import:           main
 
-    -- Modules exported by the library.
-    exposed-modules:  Effectful.Wreq
+  -- Modules exported by the library.
+  exposed-modules:
+    Effectful.Wreq
+    Effectful.Wreq.Session
 
-    -- Modules included in this library but not exported.
-    -- other-modules:
+  -- Modules included in this library but not exported.
+  -- other-modules:
 
-    -- LANGUAGE extensions used by modules in this package.
-    -- other-extensions:
+  -- LANGUAGE extensions used by modules in this package.
+  -- other-extensions:
 
-    -- Other library packages from which modules are imported.
-    build-depends:    base ^>=4.18.1.0
-                    , bytestring >= 0.11.5 && < 0.13
-                    , effectful-core >= 2.3.1 && < 3.0
-                    , http-client >= 0.7.17 && < 0.9
-                    , wreq >= 0.5.4 && < 0.7
+  -- Other library packages from which modules are imported.
+  build-depends:
+    , base            >=4.18.1.0 && <5
+    , bytestring      >=0.11.5   && <0.13
+    , effectful-core  >=2.3.1    && <3.0
+    , http-client     >=0.7.17   && <0.9
+    , wreq            >=0.5.4    && <0.7
 
-    -- Directories containing source files.
-    hs-source-dirs:   src
+  -- Directories containing source files.
+  hs-source-dirs:   src
 
-    -- Base language which the package is written in.
-    default-language: GHC2021
+  -- Base language which the package is written in.
+  default-language: GHC2021
 
 test-suite wreq-effectful-test
-    import:           main
+  import:           main
 
-    -- Base language which the package is written in.
-    default-language: GHC2021
+  -- Base language which the package is written in.
+  default-language: GHC2021
 
-    -- Modules included in this executable, other than Main.
-    -- other-modules:
+  -- Modules included in this executable, other than Main.
+  -- other-modules:
 
-    -- LANGUAGE extensions used by modules in this package.
-    -- other-extensions:
+  -- LANGUAGE extensions used by modules in this package.
+  -- other-extensions:
 
-    -- The interface type and version of the test suite.
-    type:             exitcode-stdio-1.0
+  -- The interface type and version of the test suite.
+  type:             exitcode-stdio-1.0
 
-    -- Directories containing source files.
-    hs-source-dirs:   test
+  -- Directories containing source files.
+  hs-source-dirs:   test
 
-    -- The entrypoint to the test suite.
-    main-is:          Main.hs
+  -- The entrypoint to the test suite.
+  main-is:          Main.hs
 
-    -- Test dependencies.
-    build-depends:
-        base ^>=4.18.2.1,
-        wreq-effectful
+  -- Test dependencies.
+  build-depends:
+    , base            ^>=4.18.2.1
+    , wreq-effectful
